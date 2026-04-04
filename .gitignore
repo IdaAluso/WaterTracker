@@ -1,0 +1,18 @@
+# Dependency directories
+node_modules/
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Electron distribution/build folders
+dist/
+out/
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local environment variables
+.env
