@@ -11,7 +11,8 @@
         <div class="header">Your Stats</div>
 
         <div class="card">
-            <p>Your water intake stats.</p>
+            <p>Total Water Intake: <span id="total-intake">0</span> ml</p>
+            <button id="reset-btn">Reset</button>
         </div>
 
         <div class="footer">
@@ -19,5 +20,26 @@
             <a href="stats.html"><button id="stats-btn">Stats</button></a>
         </div>
     </div>
+
+    <script>
+        // Get the total water intake from localStorage and display it
+        const totalIntakeElement = document.getElementById('total-intake');
+        const resetBtn = document.getElementById('reset-btn');
+
+        // Function to update the total intake display
+        const updateTotalIntake = () => {
+            const totalIntake = localStorage.getItem('waterIntake') || 0; // Get current intake or default to 0
+            totalIntakeElement.textContent = totalIntake; // Update the display
+        }
+
+        // Initial update
+        updateTotalIntake();
+
+        // Reset button functionality
+        resetBtn.addEventListener('click', () => {
+            localStorage.removeItem('waterIntake'); // Remove the water intake from localStorage
+            updateTotalIntake(); // Update the display
+        });
+    </script>
 </body>
 </html>
